@@ -1,4 +1,8 @@
-import logo from "./logo.svg";
+import logo from "./logo.gif";
+import reactIcon from "./react.gif";
+import vueIcon from "./vue.gif";
+import angularIcon from "./angular.gif";
+import loader from "./loader.gif"
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -32,6 +36,10 @@ import tripguide from "./tripguide.png";
 
 export {
   logo,
+  reactIcon,
+  vueIcon,
+  angularIcon,
+  loader,
   backend,
   creator,
   mobile,
