@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 const Computers = () => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
   const scifi = useGLTF("./scifi_computer/scene.gltf");
   const character = useGLTF("./character/scene.gltf");
   const selectedModel = scifi;
