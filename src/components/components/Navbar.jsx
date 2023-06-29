@@ -3,6 +3,7 @@ import { styles } from "../../styles";
 import { Link } from "react-router-dom";
 import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
+import { SvgIcon } from "@mui/material";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -15,7 +16,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-6"
+          className="flex items-center gap-6 cursor-hover"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -26,8 +27,9 @@ const Navbar = () => {
             alt="logo"
             className='w-10 h-10 object-contain scale-200 "'
           />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Rahul &nbsp;S<span className="sm:block hidden">harma</span>
+          <p className="text-white text-[18px] font-bold cursor-hover flex">
+            Rahul &nbsp;S
+            <span className="cursor-hover sm:block hidden">harma</span>
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -35,11 +37,26 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+                active === link.title
+                  ? link.id == "contact"
+                    ? "contact-nav-link"
+                    : "active-nav-link"
+                  : "text-white"
+              } hover:text-white text-[18px] font-medium cursor-hover nav-link`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a
+                className="cursor-hover flex justify-between items-center"
+                href={`#${link.id}`}
+              >
+                <SvgIcon
+                  component={link.icon}
+                  alt={link.title}
+                  className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+                />
+
+                {link.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -48,27 +65,43 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt="navmenu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            className={`${
+              toggle ? "w-[15px] h-[15px]" : "w-[28px] h-[28px]"
+            } object-contain cursor-hover`}
             onClick={() => setToggle(!toggle)}
           />
           <div
             className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-l`}
+              !toggle ? "hideDropNav" : "showDropNav"
+            } p-6 dropNav black-gradient flex absolute right-0 mx-2 my-2 min-w-[140px] w-[95%] z-10 rounded-l`}
           >
-            <ul className="list-none flex flex-col justify-end items-start gap-4">
+            <ul className="list-none w-[100%] flex flex-col items-center gap-4">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-medium cursor-pointer text-[16px]`}
+                    active === link.title
+                      ? link.id == "contact"
+                        ? "contact-nav-link"
+                        : "active-nav-link"
+                      : "text-white"
+                  } font-medium cursor-hover text-[16px] nav-link`}
                   onClick={() => {
                     setActive(link.title);
                     setToggle(!toggle);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <a
+                    href={`#${link.id}`}
+                    className="cursor-hover flex justify-between items-center"
+                  >
+                    <SvgIcon
+                      component={link.icon}
+                      alt={link.title}
+                      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+                    />
+                    {link.title}
+                  </a>
                 </li>
               ))}
             </ul>

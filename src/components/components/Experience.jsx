@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain "
+            className="w-[75%] h-[75%] object-contain "
           />
         </div>
       }
@@ -42,16 +42,25 @@ const ExperienceCard = ({ experience }) => {
         </p>
       </div>
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
         {experience.points.map((point, index) => (
-          <li
+          <p
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-white-100 text-[10px] pl-1 tracking-wider"
           >
             {point}
-          </li>
+          </p>
         ))}
-      </ul>
+      {/* <div className="flex flex-wrap gap-4 cursor-hover">
+          {experience.tags.map((tag) => (
+            <p
+              key={tag.name}
+              className="cursor-hover tech-tag text-[14px] capitalize"
+              style={{ boxShadow: `0px 0px 5px 1px ${tag.color}` }}
+            >
+              {tag.name}
+            </p>
+          ))}
+        </div> */}
     </VerticalTimelineElement>
   );
 };
@@ -59,12 +68,12 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div className="xs:ml-0 ml-5" variants={textVariant()}>
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
       </motion.div>
 
-      <div className="mt-20 flex flex-col">
+      <div className="mt-5 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />

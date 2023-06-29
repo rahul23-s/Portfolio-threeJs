@@ -1,60 +1,31 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import { ComputersCanvas } from "./canvas";
-import { reactIcon, vueIcon, angularIcon } from "../../assets";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="relative w-full h-screen flex justify-center items-center">
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+        className={`${styles.paddingX} flex flex-row justify-center items-center gap-5`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#7410F8]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-
-        <div className="select-none">
-          <h1 className={`${styles.heroHeadText}`}>
-            Hey! I'm <span className="text-[#7410F8]">Rahul</span>
+        <div className="select-none flex flex-col justify-center items-center gap-5">
+          <h1
+            className={`font-black text-white lg:text-[30px] sm:text-[25px] xs:text-[20px] text-[20px] lg:leading-[98px] mt-2`}
+          >
+            Hey! I'm <br />
+            <span
+              className={`ml-5 font-black name text-white lg:text-[120px] sm:text-[80px] xs:text-[60px] text-[60px] lg:leading-[98px] mt-2`}
+            >
+              Rahul Sharma
+            </span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            As a Web Developer well-versed in <br className="sm:block hidden" />
-            <span>
-              React
-              <img
-                src={reactIcon}
-                alt="React"
-                className='w-5 h-5 inline object-contain scale-200 ml-2 mr-2 "'
-              />
-            </span>
-            ,{" "}
-            <span>
-              Angular
-              <img
-                src={angularIcon}
-                alt="Angular"
-                className='w-5 h-5 inline object-contain scale-150 ml-2 mr-2 "'
-              />
-            </span>
-            ,{" "}
-            <span>
-              Vue
-              <img
-                src={vueIcon}
-                alt="Vue"
-                className='w-5 h-5 inline object-contain scale-200 ml-2 mr-2 "'
-              />
-            </span>
-            <br /> I create immersive Web experiences.
+          <p className={`${styles.sectionSubText} text-white-100`}>
+            I create immersive Web experiences
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
-      <div className="absolute xs:bottom-5 bottom-34 w-full flex justify-center items-center">
-        <a href="#about">
+      <div className="absolute bottom-5 w-full flex justify-center items-center">
+        {/* <a href="#about">
           <div className="w-[25px] h-[54px] rounded-3xl border-2 border-secondary flex justify-center items-startp-2 ">
             <motion.dev
               animate={{ y: [0, 25, 0] }}
@@ -66,6 +37,11 @@ const Hero = () => {
               className="w-3 h-3 rounded-full bg-secondary mt-1"
             />
           </div>
+        </a> */}
+        <a href="#about" className="arrow-container cursor-hover">
+          <div className="arrow"></div>
+          <div className="arrow"></div>
+          <div className="arrow"></div>
         </a>
       </div>
     </section>

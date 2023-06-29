@@ -13,7 +13,22 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  live_link,
 }) => {
+  const openProjectLive = (e, live_link) => {
+    e.stopPropagation();
+    if (live_link === "scroll-up") {
+      window.scrollTo(0, 0);
+    } else {
+      window.open(live_link, "_blank");
+    }
+  };
+
+  const openProjectCode = (e, source_code_link) => {
+    e.stopPropagation();
+    window.open(source_code_link, "_blank");
+  };
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.6, 0.75)}>
       <Tilt
@@ -23,34 +38,44 @@ const ProjectCard = ({
           speed: 450,
           reset: true,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full project-neon-shadow cursor-pointer transition-tilt"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full project-neon-shadow transition-tilt card-tilt"
       >
-        <div className="relative w-full h-[230px]">
+        <div
+          className="cursor-hover relative w-full h-[230px] open-live-link"
+          onClick={(e) => openProjectLive(e, live_link)}
+        >
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover rounded-xl"
+            className="cursor-hover w-full h-full object-cover rounded-xl"
           />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="bg-slate-900 rounded-full flex items-center justify-center w-10 h-10 scale-on-hover"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-8 h-8 object-contain rounded-full neon-btn-shadow-only-hover"
-              />
-            </div>
+          
+        </div>
+
+        <div className="mt-5 relative">
+          <div className=" absolute inset-0 mt-[-5px] flex justify-end card-img_hover">
+            {source_code_link && (
+              <div
+                onClick={(e) => openProjectCode(e, source_code_link)}
+                className="cursor-hover bg-slate-900 rounded-full flex items-center justify-center w-10 h-10 scale-on-hover"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="cursor-hover w-8 h-8 object-contain rounded-full neon-btn-shadow-only-hover"
+                />
+              </div>
+            )}
           </div>
+          <h3 className="text-white font-bold text-[24px]">
+            {name} 
+          </h3>
+          <p className="mt-2 text-secondary text-[14px]">
+            {description}
+          </p>
         </div>
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 ">
           {tags.map((tag) => (
             <p
               key={tag.name}
@@ -86,7 +111,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex justify-center flex-wrap gap-7">
+      <div className="mt-20 flex justify-center flex-wrap gap-10">
         {projects.map((project, index) => (
           <ProjectCard key={`project_${index}`} {...project} />
         ))}

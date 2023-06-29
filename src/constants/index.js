@@ -1,84 +1,78 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
-  html,
-  css,
   reactjs,
   redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+  fynd,
+  fyndAcademy,
+  vue,
+  angular,
+  kraftConcept,
+  babble,
+  disneyClone,
+  scss,
+  portfolio,
   threejs,
+  expIcon,
+  about,
+  projectsIcon,
+  contact,
 } from "../assets";
 
 const techColors = {
-  react : "#61dbfb",
-  angular : "#D6002F",
-  vue : "#41B883",
-  mongodb : "#00ED64",
-  typescript : "#2F74C0",
-  javascript : "#E8D44D",
-  nodejs : "#56A446",
-  redux : "#6438B1",
-  default : "#fff"
-}
+  react: "#61dbfb",
+  angular: "#D6002F",
+  vue: "#41B883",
+  mongodb: "#00ED64",
+  typescript: "#2F74C0",
+  javascript: "#E8D44D",
+  nodejs: "#56A446",
+  redux: "#6438B1",
+  figma: "#EB5B3B",
+  firebase: "#F2C026",
+  tailwind: "#3ABDF8",
+  default: "#fff",
+};
 
 export const navLinks = [
   {
     id: "about",
     title: "About",
+    icon: about,
   },
   {
     id: "work",
-    title: "Work",
+    title: "Experiences",
+    icon: expIcon,
+  },
+  {
+    id: "projects",
+    title: "Projects",
+    icon: projectsIcon,
   },
   {
     id: "contact",
     title: "Contact",
-  },
-];
-
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
+    icon: contact,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "React JS",
+    icon: reactjs,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "Vue JS",
+    icon: vue,
+  },
+  {
+    name: "Angular",
+    icon: angular,
   },
   {
     name: "JavaScript",
@@ -87,10 +81,6 @@ const technologies = [
   {
     name: "TypeScript",
     icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
   },
   {
     name: "Redux Toolkit",
@@ -105,6 +95,10 @@ const technologies = [
     icon: nodejs,
   },
   {
+    name: "Scss/Less",
+    icon: scss,
+  },
+  {
     name: "MongoDB",
     icon: mongodb,
   },
@@ -113,126 +107,148 @@ const technologies = [
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
   },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Software Engineer",
+    company_name: "Fynd (Shopsense)",
+    icon: fynd,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "July 2022 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed Vue-based analytics dashboard and UI components for Data source & destination integrations using Angular for Boltic, A Big Data Product",
+    ],
+    tags: [
+      {
+        name: "Angular",
+        color: techColors.angular,
+      },
+      {
+        name: "VueJs",
+        color: techColors.vue,
+      },
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    title: "Full Stack Trainee",
+    company_name: "Fynd Academy",
+    icon: fyndAcademy,
+    iconBg: "#fff",
+    date: "February 2022 - June 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Full-stack training in Vue.js, MongoDB, Node.js, Express.js, with project development using MEVN & Socket.iO",
+    ],
+    tags: [
+      {
+        name: "VueJs",
+        color: techColors.vue,
+      },
+      {
+        name: "NodeJs",
+        color: techColors.nodejs,
+      },
+      {
+        name: "MongoDB",
+        color: techColors.mongodb,
+      },
+      {
+        name: "Socket.io",
+        color: techColors.default,
+      },
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Web Development Intern",
+    company_name: "Kraft Concept",
+    icon: kraftConcept,
+    iconBg: "#fff",
+    date: "October 2021 - January 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Worked on NuxtJs & ReactJs, optimizing website performance, and worked on Google Maps API Integration",
+    ],
+    tags: [
+      {
+        name: "NuxtJs",
+        color: techColors.vue,
+      },
     ],
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Babble",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Babble is a Web-based chat platform that supports both individual and group chats, using Socket.IO for real-time interactions. Connect, chat, and engage with others effortlessly on Babble.",
     tags: [
       {
-        name: "react",
-        color: techColors.react,
+        name: "VueJs",
+        color: techColors.vue,
       },
       {
-        name: "mongodb",
-        color: techColors.mongodb,
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: techColors.react,
-      },
-      {
-        name: "restapi",
+        name: "NodeJs",
         color: techColors.nodejs,
       },
       {
-        name: "scss",
-        color: techColors.react,
+        name: "MongoDb",
+        color: techColors.mongodb,
+      },
+      {
+        name: "Socket.io",
+        color: techColors.default,
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: babble,
+    source_code_link: "https://github.com/rahul23-s?tab=repositories&q=Babble",
+    live_link: "https://babble-fynd.netlify.app/",
   },
   {
-    name: "Trip Guide",
+    name: "Disney+ Clone",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Disney+ Clone is a React and Firebase-based website that replicates the look and feel of the popular Disney+ streaming service. Enjoy the magical ambiance of Disney, Marvel, and Star Wars on this captivating platform",
     tags: [
       {
-        name: "css",
-        color: techColors.javascript,
+        name: "ReactJs",
+        color: techColors.react,
+      },
+      {
+        name: "Firebase",
+        color: techColors.firebase,
+      },
+      {
+        name: "Redux Toolkit",
+        color: techColors.redux,
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: disneyClone,
+    source_code_link: "https://github.com/rahul23-s/disney-plus-clone",
+    live_link: "https://disneyplus-clone-e429d.web.app/home",
+  },
+  {
+    name: "My Webfolio",
+    description:
+      "The Website you are currently on, My Portfolio website  which showcases my work, built with ReactJs and React-Three-Fiber (ThreeJs), featuring a mesmerizing space-themed design and stunning 3D models.",
+    tags: [
+      {
+        name: "ReactJs",
+        color: techColors.react,
+      },
+      {
+        name: "ThreeJs",
+        color: techColors.default,
+      },
+      {
+        name: "Tailwind CSS",
+        color: techColors.tailwind,
+      },
+    ],
+    image: portfolio,
+    live_link: "scroll-up",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { technologies, experiences, projects };
