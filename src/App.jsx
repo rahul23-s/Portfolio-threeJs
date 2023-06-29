@@ -13,7 +13,6 @@ import CLOUDS from "vanta/src/vanta.clouds";
 import { useState, useEffect } from "react";
 
 const App = () => {
-
   const [isWebsiteLoading, setIsWebsiteLoading] = useState(true);
 
   useEffect(() => {
@@ -27,13 +26,13 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    CLOUDS({
+    const cloudsEffect = CLOUDS({
       el: "#vantaWaves",
       mouseControls: true,
-      touchControls: true,
+      touchControls: false,
       gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
+      minHeight: 80.0,
+      minWidth: 80.0,
       backgroundColor: 0x45054a,
       skyColor: 0x0,
       cloudColor: 0x1d1f2c,
@@ -43,6 +42,10 @@ const App = () => {
       sunlightColor: 0xffffff,
       speed: 1,
     });
+
+    return () => {
+      cloudsEffect.destroy();
+    }
   }, []);
 
   return (
