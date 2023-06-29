@@ -26,13 +26,15 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+
     const cloudsEffect = CLOUDS({
       el: "#vantaWaves",
-      mouseControls: true,
+      mouseControls: !isMobile,
       touchControls: false,
       gyroControls: false,
-      minHeight: 80.0,
-      minWidth: 80.0,
+      minHeight: 20.0,
+      minWidth: 20.0,
       backgroundColor: 0x45054a,
       skyColor: 0x0,
       cloudColor: 0x1d1f2c,
