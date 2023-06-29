@@ -1,16 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
-  Contact,
   Experience,
   Hero,
   Navbar,
-  Works,
-  StarsCanvas,
   ScreenLoader,
 } from "./components/components";
 import CLOUDS from "vanta/src/vanta.clouds";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
+
+const Contact = lazy(() => import("./components/components/Contact"));
+const Works = lazy(() => import("./components/components/Works"));
+const StarsCanvas = lazy(() => import("./components/components/canvas/Stars"));
 
 const App = () => {
   const [isWebsiteLoading, setIsWebsiteLoading] = useState(true);
@@ -32,6 +33,7 @@ const App = () => {
       el: "#vantaWaves",
       mouseControls: !isMobile,
       touchControls: false,
+      limitMaxFPS: 30,
       gyroControls: false,
       minHeight: 20.0,
       minWidth: 20.0,
@@ -47,7 +49,7 @@ const App = () => {
 
     return () => {
       cloudsEffect.destroy();
-    }
+    };
   }, []);
 
   return (
