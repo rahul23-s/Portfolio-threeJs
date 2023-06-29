@@ -32,11 +32,6 @@ const Contact = () => {
     if (valsNotVaild()) return;
     else {
       setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        setEmailSent(true);
-      }, 4000);
-      return;
       emailjs
         .send(
           "service_ijvauyn",
