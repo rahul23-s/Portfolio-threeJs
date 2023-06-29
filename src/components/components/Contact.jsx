@@ -191,7 +191,7 @@ const Contact = () => {
                   "Send"
                 )}
               </button>
-              {error && <span className="error ml-8 text-[12px]">{error}</span>}
+              {error && <span className="error xs:ml-8 ml-2 xs:text-[12px] text-[8px]">{error}</span>}
             </div>
           </div>
         </motion.div>

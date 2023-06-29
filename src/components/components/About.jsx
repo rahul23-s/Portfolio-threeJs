@@ -20,10 +20,10 @@ const ServiceCard = ({ index, name, icon }) => {
             scale: 1,
             speed: 450,
           }}
-          className="bg-tertiary rounded-[10px] py-5 px-6 min-h-[80px] flex justify-evenly items-center flex-col"
+          className="bg-tertiary rounded-[10px] xs:py-5 xs:px-6 py-2 px-4 min-h-[80px] flex justify-evenly items-center flex-col"
         >
-          <img src={icon} alt={name} className="w-16 h-16 object-contain" />
-          <h3 className="text-white xs:text-[20px] text-[14px] font-bold text-center">
+          <img src={icon} alt={name} className="xs:w-16 xs:h-16 w-10 h-10 object-contain" />
+          <h3 className="text-white xs:text-[20px] text-[12px] mt-1 font-bold text-center">
             {name}
           </h3>
         </div>
@@ -60,8 +60,8 @@ const About = () => {
       </motion.p>
 
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} mt-5`}>Tech Stack</p>
-        <div className="mt-20 flex flex-wrap justify-center align-center gap-10">
+        <p className="sm:text-[18px] text-[14px] text-white uppercase tracking-wider mt-8 font-semibold">Tech Stack 💻</p>
+        <div className="xs:mt-10 mt-6 flex flex-wrap justify-center align-center xs:gap-10 gap-4">
           {technologies.map((service, index) => (
             <ServiceCard key={service.name} index={index} {...service} />
           ))}

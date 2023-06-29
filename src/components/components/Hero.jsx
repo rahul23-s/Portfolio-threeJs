@@ -3,7 +3,7 @@ import { styles } from "../../styles";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex justify-center items-center">
+    <section className="relative w-full h-screen flex justify-center overflow-x-hidden items-center">
       <div
         className={`${styles.paddingX} flex flex-row justify-center items-center gap-5`}
       >
@@ -13,12 +13,12 @@ const Hero = () => {
           >
             Hey! I'm <br />
             <span
-              className={`ml-5 font-black name text-white lg:text-[120px] sm:text-[80px] xs:text-[60px] text-[60px] lg:leading-[98px] mt-2`}
+              className={`ml-5 font-black name text-white lg:text-[120px] sm:text-[80px] xs:text-[60px] text-[45px] lg:leading-[98px] mt-2 text-center`}
             >
               Rahul Sharma
             </span>
           </h1>
-          <p className={`${styles.sectionSubText} text-white-100`}>
+          <p className={`${styles.sectionSubText} text-white-100 text-center`}>
             I create immersive Web experiences
           </p>
         </div>
