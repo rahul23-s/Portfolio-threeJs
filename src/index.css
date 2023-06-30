@@ -17,6 +17,7 @@
 }
 
 .cursor-hover{
+  cursor: pointer;
   cursor: url("./assets/cursor-hover.svg") 16 16,pointer, auto;
 }
 
