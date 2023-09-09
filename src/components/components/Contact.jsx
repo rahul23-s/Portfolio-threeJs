@@ -122,7 +122,7 @@ const Contact = () => {
                <Tooltip arrow title="Download My Resume ↴" TransitionComponent={Zoom}  >
                 <img src={resume} onClick={() =>
                   (window.location.href =
-                    "https://drive.google.com/uc?export=download&id=19zbp8su2jLNgrRstVAoqJPPXcc65EOwP")
+                    "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq")
                   } alt="Resume" className="download-resume w-8 h-8 object-contain cursor-hover" />
                 </Tooltip>
             </div>

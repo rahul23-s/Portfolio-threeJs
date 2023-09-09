@@ -41,7 +41,7 @@ const About = () => {
                         <button
                 onClick={() =>
                 (window.location.href =
-                  "https://drive.google.com/uc?export=download&id=19zbp8su2jLNgrRstVAoqJPPXcc65EOwP")
+                  "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq")
               }
                 className={`cursor-hover xs:py-3 xs:px-4 py-2 px-2 xs:text-[12px] text-[10px] outline-none w-fit text-white rounded-xl font-bold send-btn bg-[#4215C5] d-flex justify-between items-center whitespace-nowrap`} 
               ><img src={download} alt="Resume" className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2" />Resume</button>
