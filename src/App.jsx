@@ -8,6 +8,7 @@ import {
 } from "./components/components";
 import CLOUDS from "vanta/src/vanta.clouds";
 import { useState, useEffect, lazy } from "react";
+import { InView } from "react-intersection-observer";
 
 const Contact = lazy(() => import("./components/components/Contact"));
 const Works = lazy(() => import("./components/components/Works"));
@@ -15,6 +16,7 @@ const StarsCanvas = lazy(() => import("./components/components/canvas/Stars"));
 
 const App = () => {
   const [isWebsiteLoading, setIsWebsiteLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -60,15 +62,48 @@ const App = () => {
           id="vantaWaves"
           className="background-vanta bg-cover bg-no-repeat bg-center"
         >
-          <Navbar />
-          <Hero />
+          <Navbar
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+          />
+          <InView
+            threshold={0.2}
+            as="div"
+            onChange={(inView) => inView && setActiveSection("")}
+          >
+            <Hero />
+          </InView>
         </div>
-        <About />
-        <Experience />
-        <Works />
-        <div className="relative z-0 overflow-x-hidden">
-          <Contact />
-        </div>
+        <InView
+          threshold={0.2}
+          as="div"
+          onChange={(inView) => inView && setActiveSection("About")}
+        >
+          <About />
+        </InView>
+        <InView
+          threshold={0.2}
+          as="div"
+          onChange={(inView) => inView && setActiveSection("Experiences")}
+        >
+          <Experience />
+        </InView>
+        <InView
+          threshold={0.2}
+          as="div"
+          onChange={(inView) => inView && setActiveSection("Projects")}
+        >
+          <Works />
+        </InView>
+        <InView
+          threshold={0.2}
+          as="div"
+          onChange={(inView) => inView && setActiveSection("Contact")}
+        >
+          <div className="relative z-0 overflow-x-hidden">
+            <Contact />
+          </div>
+        </InView>
         <StarsCanvas />
       </div>
     </BrowserRouter>

@@ -5,9 +5,18 @@ import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
 import { SvgIcon } from "@mui/material";
 
-const Navbar = () => {
-  const [active, setActive] = useState("");
+const Navbar = ({ activeSection, setActiveSection }) => {
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const hash = window.location.hash.substr(1);
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <nav
@@ -37,13 +46,13 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title
+                activeSection === link.title
                   ? link.id == "contact"
                     ? "contact-nav-link"
                     : "active-nav-link"
                   : "text-white"
               } hover:text-white text-[18px] font-medium cursor-hover nav-link`}
-              onClick={() => setActive(link.title)}
+              onClick={() => setActiveSection(link.title)}
             >
               <a
                 className="cursor-hover flex justify-between items-center"
@@ -80,14 +89,14 @@ const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title
+                    activeSection === link.title
                       ? link.id == "contact"
                         ? "contact-nav-link"
                         : "active-nav-link"
                       : "text-white"
                   } font-medium cursor-hover text-[16px] nav-link`}
                   onClick={() => {
-                    setActive(link.title);
+                    setActiveSection(link.title);
                     setToggle(!toggle);
                   }}
                 >
