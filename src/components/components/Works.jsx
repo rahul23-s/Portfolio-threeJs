@@ -5,6 +5,7 @@ import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
 import { projects } from "../../constants";
 import { fadeIn, textVariant } from "../../utils/motion";
+import ReactGA from "react-ga4";
 
 const ProjectCard = ({
   index,
@@ -17,6 +18,11 @@ const ProjectCard = ({
 }) => {
   const openProjectLive = (e, live_link) => {
     e.stopPropagation();
+    ReactGA.event({
+      category: "Project Live Link",
+      action: "clicked",
+      label: name,
+    });
     if (live_link === "scroll-up") {
       window.scrollTo(0, 0);
     } else {
@@ -26,6 +32,11 @@ const ProjectCard = ({
 
   const openProjectCode = (e, source_code_link) => {
     e.stopPropagation();
+    ReactGA.event({
+      category: "Project Code",
+      action: "clicked",
+      label: name,
+    });
     window.open(source_code_link, "_blank");
   };
 
@@ -49,7 +60,6 @@ const ProjectCard = ({
             alt={name}
             className="cursor-hover w-full h-full object-cover rounded-xl"
           />
-          
         </div>
 
         <div className="mt-5 relative">
@@ -67,12 +77,8 @@ const ProjectCard = ({
               </div>
             )}
           </div>
-          <h3 className="text-white font-bold text-[24px]">
-            {name} 
-          </h3>
-          <p className="mt-2 text-secondary text-[14px]">
-            {description}
-          </p>
+          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2 ">

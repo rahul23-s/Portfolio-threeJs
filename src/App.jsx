@@ -9,10 +9,14 @@ import {
 import CLOUDS from "vanta/src/vanta.clouds";
 import { useState, useEffect, lazy } from "react";
 import { InView } from "react-intersection-observer";
+import ReactGA from "react-ga4";
 
 const Contact = lazy(() => import("./components/components/Contact"));
 const Works = lazy(() => import("./components/components/Works"));
 const StarsCanvas = lazy(() => import("./components/components/canvas/Stars"));
+
+const TRACKING_ID = "G-PSK51XTC26";
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
   const [isWebsiteLoading, setIsWebsiteLoading] = useState(true);
@@ -22,6 +26,7 @@ const App = () => {
     const timer = setTimeout(() => {
       setIsWebsiteLoading(false);
     }, 4000);
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
     return () => {
       clearTimeout(timer);

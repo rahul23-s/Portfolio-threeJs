@@ -10,7 +10,8 @@ import SentEmail from "../../assets/email-sent.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { linkedin, resume } from "../../assets";
 import { Tooltip } from "@mui/material";
-import Zoom from '@mui/material/Zoom';
+import Zoom from "@mui/material/Zoom";
+import ReactGA from "react-ga4";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -32,6 +33,11 @@ const Contact = () => {
     if (valsNotVaild()) return;
     else {
       setLoading(true);
+      ReactGA.event({
+        category: "Contact Form",
+        action: "Submitted",
+        label: form.email,
+      });
       emailjs
         .send(
           "service_ijvauyn",
@@ -116,21 +122,56 @@ const Contact = () => {
           <div className="flex items-center justify-between">
             <h3 className={styles.sectionHeadText}>Contact</h3>
             <div className="socials flex justify-between xs:gap-4 gap-2 items-end h-[100%]">
-              <Tooltip arrow title="Connect with me on Linkedin" TransitionComponent={Zoom} >
-               <img src={linkedin} onClick={()=>window.open("https://www.linkedin.com/in/rahul23-s/", "_blank")} alt="LinkedIn" className="linkedin w-8 h-8 object-contain cursor-hover" />
+              <Tooltip
+                arrow
+                title="Connect with me on Linkedin"
+                TransitionComponent={Zoom}
+              >
+                <img
+                  src={linkedin}
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "LinkedIn",
+                      action: "clicked",
+                      label: "LinkedIn visited",
+                    });
+                    window.open(
+                      "https://www.linkedin.com/in/rahul23-s/",
+                      "_blank"
+                    );
+                  }}
+                  alt="LinkedIn"
+                  className="linkedin w-8 h-8 object-contain cursor-hover"
+                />
               </Tooltip>
-               <Tooltip arrow title="Download My Resume ↴" TransitionComponent={Zoom}  >
-                <img src={resume} onClick={() =>
-                  (window.location.href =
-                    "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq")
-                  } alt="Resume" className="download-resume w-8 h-8 object-contain cursor-hover" />
-                </Tooltip>
+              <Tooltip
+                arrow
+                title="Download My Resume ↴"
+                TransitionComponent={Zoom}
+              >
+                <img
+                  src={resume}
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "Resume",
+                      action: "clicked",
+                      label: "Contact Resume Download",
+                    });
+                    window.location.href =
+                      "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq";
+                  }}
+                  alt="Resume"
+                  className="download-resume w-8 h-8 object-contain cursor-hover"
+                />
+              </Tooltip>
             </div>
           </div>
 
           <div className="mt-4 flex flex-col gap-4">
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-2 xs:text-[16px] text-[12px] ">Your Name</span>
+              <span className="text-white font-medium mb-2 xs:text-[16px] text-[12px] ">
+                Your Name
+              </span>
               <input
                 type="text"
                 name="name"
@@ -142,7 +183,9 @@ const Contact = () => {
               />
             </label>
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-2 xs:text-[16px] text-[12px] ">Your Email</span>
+              <span className="text-white font-medium mb-2 xs:text-[16px] text-[12px] ">
+                Your Email
+              </span>
               <input
                 type="text"
                 name="email"
@@ -154,7 +197,9 @@ const Contact = () => {
               />
             </label>
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4 xs:text-[16px] text-[12px] ">Your Message</span>
+              <span className="text-white font-medium mb-4 xs:text-[16px] text-[12px] ">
+                Your Message
+              </span>
               <textarea
                 name="message"
                 id="message"
@@ -191,7 +236,11 @@ const Contact = () => {
                   "Send"
                 )}
               </button>
-              {error && <span className="error xs:ml-8 ml-2 xs:text-[12px] text-[8px]">{error}</span>}
+              {error && (
+                <span className="error xs:ml-8 ml-2 xs:text-[12px] text-[8px]">
+                  {error}
+                </span>
+              )}
             </div>
           </div>
         </motion.div>
