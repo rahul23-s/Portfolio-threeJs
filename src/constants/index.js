@@ -115,7 +115,7 @@ const technologies = [
 const experiences = [
   {
     title: "Software Engineer",
-    company_name: "Fynd (Shopsense)",
+    company_name: "Fynd (Shopsense Retail Technologies Ltd)",
     icon: fynd,
     iconBg: "#E6DEDD",
     date: "July 2022 - Present",

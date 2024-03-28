@@ -22,7 +22,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import scss from "./tech/scss.svg";
 import fynd from "./company/fynd.png";
-import fyndAcademy from "./company/fyndAcademy.jpg";
+import fyndAcademy from "./company/fyndAcademy.svg";
 import kraftConcept from "./company/kraftConcept.jpg";
 
 import astroLoader from "./astro-loader.json";
