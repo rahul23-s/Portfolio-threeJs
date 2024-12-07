@@ -1,4 +1,3 @@
-import logo from "./logo.gif";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -206,7 +205,6 @@ const projectsIcon = () => {
 };
 
 export {
-  logo,
   contact,
   expIcon,
   about,

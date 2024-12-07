@@ -23,6 +23,9 @@ import {
   contact,
 } from "../assets";
 
+export const RESUME_LINK =
+  "https://drive.google.com/uc?export=download&id=1gaygaem_O5AV9qSuBLvb2lNBcOJQ2vrZ";
+
 const techColors = {
   react: "#61dbfb",
   angular: "#D6002F",
@@ -40,22 +43,22 @@ const techColors = {
 
 export const navLinks = [
   {
-    id: "about",
+    id: "About",
     title: "About",
     icon: about,
   },
   {
-    id: "work",
+    id: "Experiences",
     title: "Experiences",
     icon: expIcon,
   },
   {
-    id: "projects",
+    id: "Projects",
     title: "Projects",
     icon: projectsIcon,
   },
   {
-    id: "contact",
+    id: "Contact",
     title: "Contact",
     icon: contact,
   },
@@ -120,7 +123,7 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "July 2022 - Present",
     points: [
-      "Developed Vue-based analytics dashboard and UI components for Data source & destination integrations using Angular for Boltic, A Big Data Product",
+      "Developed Vue.js-based ONDC Seller Panel UI, React.js e-commerce theme, Angular Admin Panels for Boltic, and interactive analytics dashboards with Chart.js, ensuring high-quality, tested deliverables",
     ],
     tags: [
       {
@@ -140,7 +143,7 @@ const experiences = [
     iconBg: "#fff",
     date: "February 2022 - June 2022",
     points: [
-      "Full-stack training in Vue.js, MongoDB, Node.js, Express.js, with project development using MEVN & Socket.iO",
+      "Full-stack training in Vue.js, MongoDB, Node.js, Express.js, with project development using MEVN & Socket.io",
     ],
     tags: [
       {

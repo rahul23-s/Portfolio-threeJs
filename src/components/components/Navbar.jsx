@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
 import { SvgIcon } from "@mui/material";
+import LaptopLogo from "../../assets/laptop-icon.json";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const Navbar = ({ activeSection, setActiveSection }) => {
   const [toggle, setToggle] = useState(false);
 
+  // Scroll to the section when the URL hash changes
   useEffect(() => {
     const hash = window.location.hash.substr(1);
     if (hash) {
@@ -18,6 +21,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (activeSection === "") {
+      window.history.replaceState(null, null, window.location.pathname);
+    } else if (activeSection) {
+      window.history.replaceState(null, null, `#${activeSection}`);
+    }
+  }, [activeSection]);
+
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 blur-backdrop neon-shadow `}
@@ -27,14 +38,15 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           to="/"
           className="flex items-center gap-6 cursor-hover"
           onClick={() => {
-            setActive("");
+            setActiveSection("");
             window.scrollTo(0, 0);
           }}
         >
-          <img
-            src={logo}
-            alt="logo"
-            className='w-10 h-10 object-contain scale-200 "'
+          <Player
+            src={LaptopLogo}
+            loop
+            autoplay
+            className="w-10 h-10 object-contain scale-250 "
           />
           <p className="text-white text-[18px] font-bold cursor-hover flex">
             Rahul &nbsp;S
@@ -47,12 +59,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               key={link.id}
               className={`${
                 activeSection === link.title
-                  ? link.id == "contact"
+                  ? link.id === "contact"
                     ? "contact-nav-link"
                     : "active-nav-link"
                   : "text-white"
               } hover:text-white text-[18px] font-medium cursor-hover nav-link`}
-              onClick={() => setActiveSection(link.title)}
+              onClick={() => setActiveSection(link.id)}
             >
               <a
                 className="cursor-hover flex justify-between items-center"
@@ -63,7 +75,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                   alt={link.title}
                   className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
                 />
-
                 {link.title}
               </a>
             </li>
@@ -90,13 +101,13 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                   key={link.id}
                   className={`${
                     activeSection === link.title
-                      ? link.id == "contact"
+                      ? link.id === "contact"
                         ? "contact-nav-link"
                         : "active-nav-link"
                       : "text-white"
                   } font-medium cursor-hover text-[16px] nav-link`}
                   onClick={() => {
-                    setActiveSection(link.title);
+                    setActiveSection(link.id);
                     setToggle(!toggle);
                   }}
                 >

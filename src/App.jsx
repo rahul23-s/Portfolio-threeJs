@@ -6,7 +6,7 @@ import {
   Navbar,
   ScreenLoader,
 } from "./components/components";
-import CLOUDS from "vanta/src/vanta.clouds";
+import CLOUDS from "vanta/src/vanta.halo";
 import { useState, useEffect, lazy } from "react";
 import { InView } from "react-intersection-observer";
 import ReactGA from "react-ga4";
@@ -38,20 +38,17 @@ const App = () => {
 
     const cloudsEffect = CLOUDS({
       el: "#vantaWaves",
-      mouseControls: !isMobile,
-      touchControls: false,
-      limitMaxFPS: 30,
-      gyroControls: false,
-      minHeight: 20.0,
-      minWidth: 20.0,
-      backgroundColor: 0x45054a,
-      skyColor: 0x0,
-      cloudColor: 0x1d1f2c,
-      cloudShadowColor: 0x36,
-      sunColor: 0x7c7c,
-      sunGlareColor: 0x7e7ee8,
-      sunlightColor: 0xffffff,
       speed: 1,
+      backgroundColor: 0x60816,
+      mouseControls: !isMobile,
+      touchControls: true,
+      limitMaxFPS: 30,
+      gyroControls: true,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      amplitudeFactor: 1.2,
+      xOffset: -0.2,
+      size: 1,
     });
 
     return () => {

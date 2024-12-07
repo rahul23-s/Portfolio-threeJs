@@ -12,6 +12,7 @@ import { linkedin, resume } from "../../assets";
 import { Tooltip } from "@mui/material";
 import Zoom from "@mui/material/Zoom";
 import ReactGA from "react-ga4";
+import { RESUME_LINK, navLinks } from "../../constants";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -157,8 +158,7 @@ const Contact = () => {
                       action: "clicked",
                       label: "Contact Resume Download",
                     });
-                    window.location.href =
-                      "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq";
+                    window.location.href = RESUME_LINK;
                   }}
                   alt="Resume"
                   className="download-resume w-8 h-8 object-contain cursor-hover"
@@ -256,4 +256,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(Contact, navLinks[3].id);

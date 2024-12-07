@@ -9,6 +9,7 @@ import { styles } from "../../styles";
 import { experiences } from "../../constants";
 import { SectionWrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion";
+import { navLinks } from "../../constants";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -42,14 +43,14 @@ const ExperienceCard = ({ experience }) => {
         </p>
       </div>
 
-        {experience.points.map((point, index) => (
-          <p
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[10px] pl-1 tracking-wider"
-          >
-            {point}
-          </p>
-        ))}
+      {experience.points.map((point, index) => (
+        <p
+          key={`experience-point-${index}`}
+          className="text-white-100 text-[10px] pl-1 tracking-wider"
+        >
+          {point}
+        </p>
+      ))}
       {/* <div className="flex flex-wrap gap-4 cursor-hover">
           {experience.tags.map((tag) => (
             <p
@@ -84,4 +85,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, navLinks[1].id);

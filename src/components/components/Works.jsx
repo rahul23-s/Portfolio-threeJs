@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { github } from "../../assets";
 import { SectionWrapper } from "../../hoc";
-import { projects } from "../../constants";
+import { navLinks, projects } from "../../constants";
 import { fadeIn, textVariant } from "../../utils/motion";
 import ReactGA from "react-ga4";
 
@@ -126,4 +126,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "projects");
+export default SectionWrapper(Works, navLinks[2].id);

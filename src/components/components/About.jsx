@@ -2,11 +2,12 @@ import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import { technologies } from "../../constants";
+import { navLinks, technologies } from "../../constants";
 import { fadeIn, textVariant } from "./../../utils/motion";
 import { SectionWrapper } from "../../hoc";
 import { download } from "../../assets";
 import ReactGA from "react-ga4";
+import { RESUME_LINK } from "../../constants";
 
 const ServiceCard = ({ index, name, icon }) => {
   return (
@@ -53,8 +54,7 @@ const About = () => {
                 action: "click",
                 label: "About Resume Download",
               });
-              window.location.href =
-                "https://drive.google.com/uc?export=download&id=1arx3nQWpi_gtpvX-nwVMlPxs1GtFk_wq";
+              window.location.href = RESUME_LINK;
             }}
             className={`cursor-hover xs:py-3 xs:px-4 py-2 px-2 xs:text-[12px] text-[10px] outline-none w-fit text-white rounded-xl font-bold send-btn bg-[#4215C5] d-flex justify-between items-center whitespace-nowrap`}
           >
@@ -72,10 +72,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        As a Web Developer, I excel in TypeScript and JavaScript, working
-        extensively with Angular, React, and Vue. By leveraging the power of
-        these JS frameworks, I craft efficient and visually appealing web
-        applications, ensuring seamless performance and user satisfaction.
+        As a Web Developer with 2.5+ years of experience, I excel in TypeScript
+        and JavaScript, working extensively with Angular, React, and Vue. By
+        leveraging the power of these JS frameworks, I craft efficient and
+        visually appealing web applications, ensuring seamless performance and
+        user satisfaction.
       </motion.p>
 
       <motion.div variants={textVariant()}>
@@ -92,4 +93,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, navLinks[0].id);
