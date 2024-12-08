@@ -15,12 +15,12 @@ import {
   babble,
   disneyClone,
   scss,
-  portfolio,
   threejs,
   expIcon,
   about,
   projectsIcon,
   contact,
+  webfolio,
 } from "../assets";
 
 export const RESUME_LINK =
@@ -249,7 +249,7 @@ const projects = [
         color: techColors.tailwind,
       },
     ],
-    image: portfolio,
+    image: webfolio,
     live_link: "scroll-up",
   },
 ];

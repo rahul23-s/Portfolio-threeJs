@@ -28,7 +28,7 @@ import astroLoader from "./astro-loader.json";
 import carrent from "./carrent.png";
 import babble from "./project/Babble.png";
 import disneyClone from "./project/DisneyClone.png";
-import portfolio from "./project/Portfolio.png";
+import webfolio from "./project/Webfolio.png";
 
 // import contact from "./navIcons/contact.svg";
 // import expIcon from "./navIcons/experience.svg";
@@ -216,7 +216,7 @@ export {
   download,
   babble,
   disneyClone,
-  portfolio,
+  webfolio,
   linkedin,
   resume,
   vue,
