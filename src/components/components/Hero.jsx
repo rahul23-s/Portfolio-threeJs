@@ -38,7 +38,7 @@ const Hero = () => {
             />
           </div>
         </a> */}
-        <a href="#about" className="arrow-container cursor-hover">
+        <a href="#About" className="arrow-container cursor-hover">
           <div className="arrow"></div>
           <div className="arrow"></div>
           <div className="arrow"></div>

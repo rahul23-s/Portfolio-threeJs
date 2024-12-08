@@ -31,9 +31,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 blur-backdrop neon-shadow `}
+      className={`${styles.paddingX} ${
+        !toggle ? "heightBackToNormal" : "increaseHeight"
+      } w-full flex items-center py-5 fixed top-0 z-20 blur-backdrop neon-shadow `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto self-start">
         <Link
           to="/"
           className="flex items-center gap-6 cursor-hover"
@@ -93,7 +95,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           <div
             className={`${
               !toggle ? "hideDropNav" : "showDropNav"
-            } p-6 dropNav black-gradient flex absolute right-0 mx-2 my-2 min-w-[140px] w-[95%] z-10 rounded-l`}
+            } p-6 flex absolute right-0 mx-2 my-2 min-w-[140px] w-[95%] z-10 rounded-l`}
           >
             <ul className="list-none w-[100%] flex flex-col items-center gap-4">
               {navLinks.map((link) => (
