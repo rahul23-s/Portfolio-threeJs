@@ -6,7 +6,6 @@ import {
   Navbar,
   ScreenLoader,
 } from "./components/components";
-import CLOUDS from "vanta/src/vanta.halo";
 import { useState, useEffect, lazy } from "react";
 import { InView } from "react-intersection-observer";
 import ReactGA from "react-ga4";
@@ -14,6 +13,7 @@ import ReactGA from "react-ga4";
 const Contact = lazy(() => import("./components/components/Contact"));
 const Works = lazy(() => import("./components/components/Works"));
 const StarsCanvas = lazy(() => import("./components/components/canvas/Stars"));
+import Spline from "@splinetool/react-spline";
 
 const TRACKING_ID = "G-PSK51XTC26";
 ReactGA.initialize(TRACKING_ID);
@@ -33,37 +33,16 @@ const App = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-
-    const cloudsEffect = CLOUDS({
-      el: "#vantaWaves",
-      speed: 1,
-      backgroundColor: 0x60816,
-      mouseControls: !isMobile,
-      touchControls: true,
-      limitMaxFPS: 30,
-      gyroControls: true,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      amplitudeFactor: 1.2,
-      xOffset: -0.2,
-      size: 1,
-    });
-
-    return () => {
-      cloudsEffect.destroy();
-    };
-  }, []);
-
   return (
     <BrowserRouter>
       {isWebsiteLoading && <ScreenLoader />}
-      <div className="relative z-0 bg-primary">
-        <div
-          id="vantaWaves"
-          className="background-vanta bg-cover bg-no-repeat bg-center"
-        >
+      <div className="relative z-0 bg-black">
+        <div className="background-vanta relative bg-cover bg-no-repeat bg-center">
+          <Spline
+            className="spline-view flex items-center justify-center"
+            scene="https://prod.spline.design/q0SJKAuiJfC6KMfX/scene.splinecode"
+          />
+
           <Navbar
             activeSection={activeSection}
             setActiveSection={setActiveSection}

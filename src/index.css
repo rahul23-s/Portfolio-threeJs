@@ -589,3 +589,10 @@ html {
   transition: all 500ms ease-in;
   box-shadow: 0 2px 0px rgb(215, 170, 250);
 }
+
+.spline-view {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  right: 0;
+}
