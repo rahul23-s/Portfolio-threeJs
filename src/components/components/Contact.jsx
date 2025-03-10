@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import SendingLottie from "../../assets/loader.json";
@@ -13,6 +12,7 @@ import { Tooltip } from "@mui/material";
 import Zoom from "@mui/material/Zoom";
 import ReactGA from "react-ga4";
 import { RESUME_LINK, navLinks } from "../../constants";
+import ContactLottie from "../../assets/contact.json";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -248,9 +248,9 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("up", "spring", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[250px]"
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[250px] xs:inline hidden"
       >
-        <EarthCanvas />
+        <Player src={ContactLottie} loop autoplay />
       </motion.div>
     </div>
   );
