@@ -40,7 +40,7 @@ const App = () => {
         <div className="background-vanta relative bg-cover bg-no-repeat bg-center">
           <Spline
             className="spline-view flex items-center justify-center"
-            scene="https://prod.spline.design/q0SJKAuiJfC6KMfX/scene.splinecode"
+            scene="https://prod.spline.design/IH1Dj6kBBabQ1MU5/scene.splinecode"
           />
 
           <Navbar
