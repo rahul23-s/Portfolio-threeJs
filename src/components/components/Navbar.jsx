@@ -7,7 +7,7 @@ import { SvgIcon } from "@mui/material";
 import LaptopLogo from "../../assets/laptop-icon.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-const Navbar = ({ activeSection, setActiveSection }) => {
+const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
   const [toggle, setToggle] = useState(false);
 
   // Scroll to the section when the URL hash changes
@@ -33,7 +33,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     <nav
       className={`${styles.paddingX} ${
         !toggle ? "heightBackToNormal" : "increaseHeight"
-      } w-full flex items-center py-5 fixed top-0 z-20 blur-backdrop neon-shadow `}
+      } w-full flex items-center py-5 fixed top-0 z-20 blur-backdrop neon-shadow ${
+        isMobile ? "" : "dynamic-island"
+      }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto self-start">
         <Link

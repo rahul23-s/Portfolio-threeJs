@@ -48,6 +48,11 @@ const App = () => {
     <BrowserRouter>
       {isWebsiteLoading && <ScreenLoader />}
       <div className="relative z-0 bg-black">
+        <Navbar
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+          isMobile={isMobile}
+        />
         <div className="background-vanta relative bg-cover bg-no-repeat bg-center">
           <Spline
             className="spline-view flex items-center justify-center"
@@ -56,11 +61,6 @@ const App = () => {
                 ? "https://prod.spline.design/IH1Dj6kBBabQ1MU5/scene.splinecode"
                 : "https://prod.spline.design/q0SJKAuiJfC6KMfX/scene.splinecode"
             }
-          />
-
-          <Navbar
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
           />
 
           <InView

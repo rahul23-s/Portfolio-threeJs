@@ -123,7 +123,7 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "July 2022 - Present",
     points: [
-      "Developed Vue.js-based ONDC Seller Panel UI, React.js e-commerce theme, Angular Admin Panels for Boltic, and interactive analytics dashboards with Chart.js, ensuring high-quality, tested deliverables",
+      "At Fynd, I focused on building responsive frontend applications using React, including the ONDC Buyer App and Boltic admin tools. I also worked on Vue-based dashboards and panels. My work emphasized clean UI architecture, performance, and maintainable code through testing and documentation",
     ],
     tags: [
       {
