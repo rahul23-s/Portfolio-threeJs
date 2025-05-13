@@ -207,7 +207,7 @@ const projects = [
     ],
     image: babble,
     source_code_link: "https://github.com/rahul23-s?tab=repositories&q=Babble",
-    live_link: "https://babble-fynd.netlify.app/",
+    live_link: "https://letsbabble.netlify.app/",
   },
   {
     name: "Disney+ Clone",
