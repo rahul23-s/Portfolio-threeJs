@@ -40,7 +40,7 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto self-start">
         <Link
           to="/"
-          className="flex items-center gap-6 cursor-hover"
+          className="flex items-center gap-6 cursor-pointer"
           onClick={() => {
             setActiveSection("");
             window.scrollTo(0, 0);
@@ -52,9 +52,9 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
             autoplay
             className="w-10 h-10 object-contain scale-250 "
           />
-          <p className="text-white text-[18px] font-bold cursor-hover flex">
+          <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Rahul &nbsp;S
-            <span className="cursor-hover sm:block hidden">harma</span>
+            <span className="cursor-pointer sm:block hidden">harma</span>
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -67,17 +67,17 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
                     ? "contact-nav-link"
                     : "active-nav-link"
                   : "text-white"
-              } hover:text-white text-[18px] font-medium cursor-hover nav-link`}
+              } hover:text-white text-[18px] font-medium cursor-pointer nav-link`}
               onClick={() => setActiveSection(link.id)}
             >
               <a
-                className="cursor-hover flex justify-between items-center"
+                className="cursor-pointer flex justify-between items-center"
                 href={`#${link.id}`}
               >
                 <SvgIcon
                   component={link.icon}
                   alt={link.title}
-                  className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+                  className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
                 />
                 {link.title}
               </a>
@@ -91,7 +91,7 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
             alt="navmenu"
             className={`${
               toggle ? "w-[15px] h-[15px]" : "w-[28px] h-[28px]"
-            } object-contain cursor-hover`}
+            } object-contain cursor-pointer`}
             onClick={() => setToggle(!toggle)}
           />
           <div
@@ -109,7 +109,7 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
                         ? "contact-nav-link"
                         : "active-nav-link"
                       : "text-white"
-                  } font-medium cursor-hover text-[16px] nav-link`}
+                  } font-medium cursor-pointer text-[16px] nav-link`}
                   onClick={() => {
                     setActiveSection(link.id);
                     setToggle(!toggle);
@@ -117,12 +117,12 @@ const Navbar = ({ activeSection, setActiveSection, isMobile }) => {
                 >
                   <a
                     href={`#${link.id}`}
-                    className="cursor-hover flex justify-between items-center"
+                    className="cursor-pointer flex justify-between items-center"
                   >
                     <SvgIcon
                       component={link.icon}
                       alt={link.title}
-                      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+                      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
                     />
                     {link.title}
                   </a>

@@ -142,7 +142,7 @@ const Contact = () => {
                     );
                   }}
                   alt="LinkedIn"
-                  className="linkedin w-8 h-8 object-contain cursor-hover"
+                  className="linkedin w-8 h-8 object-contain cursor-pointer"
                 />
               </Tooltip>
               <Tooltip
@@ -161,7 +161,7 @@ const Contact = () => {
                     window.location.href = RESUME_LINK;
                   }}
                   alt="Resume"
-                  className="download-resume w-8 h-8 object-contain cursor-hover"
+                  className="download-resume w-8 h-8 object-contain cursor-pointer"
                 />
               </Tooltip>
             </div>
@@ -179,7 +179,7 @@ const Contact = () => {
                 disabled={loading}
                 onChange={handleChange}
                 placeholder="What's Your Name?"
-                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px]  placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-hover"
+                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px]  placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-pointer"
               />
             </label>
             <label className="flex flex-col">
@@ -193,7 +193,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="What's Your Email?"
-                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px] placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-hover"
+                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px] placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-pointer"
               />
             </label>
             <label className="flex flex-col">
@@ -209,14 +209,14 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Write Your Message Here"
-                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px]  placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-hover resize-none"
+                className="bg-tertiary xs:py-4 xs:px-6 py-3 px-3 xs:text-[16px] text-[12px]  placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium input-shadow-hover-and-active cursor-pointer resize-none"
               ></textarea>
             </label>
 
             <div className="w-full  max-h-[51px]">
               <button
                 onClick={handleSubmit}
-                className={`cursor-hover py-3 px-8 outline-none w-fit text-white rounded-xl max-h-[51px] font-bold send-btn bg-[#4215C5] ${
+                className={`cursor-pointer py-3 px-8 outline-none w-fit text-white rounded-xl max-h-[51px] font-bold send-btn bg-[#4215C5] ${
                   loading ? "sending-animation" : ""
                 }`}
               >

@@ -38,7 +38,7 @@ import webfolio from "./project/Webfolio.png";
 const contact = () => {
   return (
     <svg
-      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
       fill="#ffffff"
       height="800px"
       width="800px"
@@ -74,7 +74,7 @@ const contact = () => {
 const expIcon = () => {
   return (
     <svg
-      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="32px"
@@ -104,7 +104,7 @@ const expIcon = () => {
 const about = () => {
   return (
     <svg
-      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
       width="32px"
       height="32px"
       viewBox="0 0 24 24"
@@ -150,7 +150,7 @@ const about = () => {
 const projectsIcon = () => {
   return (
     <svg
-      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+      className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-pointer mr-2"
       fill="#ffffff"
       width="32px"
       height="32px"

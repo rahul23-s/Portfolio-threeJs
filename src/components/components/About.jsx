@@ -56,14 +56,14 @@ const About = () => {
               });
               window.location.href = RESUME_LINK;
             }}
-            className={`cursor-hover xs:py-3 xs:px-4 py-2 px-2 xs:text-[12px] text-[10px] outline-none w-fit text-white rounded-xl font-bold send-btn bg-[#4215C5] d-flex justify-between items-center whitespace-nowrap`}
+            className={`cursor-pointer xs:py-3 xs:px-4 py-2 px-2 xs:text-[12px] text-[10px] outline-none w-fit text-white rounded-xl font-bold send-btn bg-[#4215C5] d-flex justify-between items-center whitespace-nowrap`}
           >
             <img
               src={download}
               alt="Resume"
-              className="inline xs:w-5 xs:h-5 h-4 w-4 object-contain cursor-hover mr-2"
+              className="cursor-pointer inline xs:w-5 xs:h-5 h-4 w-4 object-contain  mr-2"
             />
-            Resume
+            Download CV
           </button>
         </h2>
       </motion.div>
@@ -72,8 +72,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        As a Web Developer with 2.5+ years of experience, I excel in TypeScript
-        and JavaScript, working extensively with Angular, React, and Vue. By
+        As a Web Developer with over 3 years of experience, I excel in
+        TypeScript and JavaScript, working extensively with React and Vue. By
         leveraging the power of these JS frameworks, I craft efficient and
         visually appealing web applications, ensuring seamless performance and
         user satisfaction.

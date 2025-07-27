@@ -12,17 +12,11 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
-  cursor: url("./assets/cursor.svg") 0 0, auto;
 }
 
-.cursor-hover {
+.cursor-pointer {
   cursor: pointer;
-  cursor: url("./assets/cursor-hover.svg") 16 16, pointer, auto;
 }
-
-/* .cursor-pointer{
-  cursor: url("./assets/cursor.svg") 16 16, auto;
-} */
 
 html {
   overflow-x: hidden;
@@ -292,7 +286,7 @@ html {
 }
 
 .download-resume::after {
-  content: "Download My Resume ↴";
+  content: "Download My CV ↴";
   display: block;
   position: absolute;
   right: -35%;
@@ -394,7 +388,7 @@ html {
 }
 
 .arrow-container:hover {
-  cursor: url("./assets/cursor-hover.svg") 16 16, auto;
+  cursor: pointer;
 }
 
 .arrow-container:hover .arrow {

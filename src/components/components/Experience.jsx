@@ -51,11 +51,11 @@ const ExperienceCard = ({ experience }) => {
           {point}
         </p>
       ))}
-      {/* <div className="flex flex-wrap gap-4 cursor-hover">
+      {/* <div className="flex flex-wrap gap-4 cursor-pointer">
           {experience.tags.map((tag) => (
             <p
               key={tag.name}
-              className="cursor-hover tech-tag text-[14px] capitalize"
+              className="cursor-pointer tech-tag text-[14px] capitalize"
               style={{ boxShadow: `0px 0px 5px 1px ${tag.color}` }}
             >
               {tag.name}

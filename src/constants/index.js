@@ -74,10 +74,6 @@ const technologies = [
     icon: vue,
   },
   {
-    name: "Angular",
-    icon: angular,
-  },
-  {
     name: "JavaScript",
     icon: javascript,
   },
@@ -127,8 +123,8 @@ const experiences = [
     ],
     tags: [
       {
-        name: "Angular",
-        color: techColors.angular,
+        name: "ReactJs",
+        color: techColors.react,
       },
       {
         name: "VueJs",
@@ -174,6 +170,10 @@ const experiences = [
       "Worked on NuxtJs & ReactJs, optimizing website performance, and worked on Google Maps API Integration",
     ],
     tags: [
+      {
+        name: "VueJs",
+        color: techColors.vue,
+      },
       {
         name: "NuxtJs",
         color: techColors.vue,

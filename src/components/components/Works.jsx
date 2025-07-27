@@ -52,13 +52,13 @@ const ProjectCard = ({
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full project-neon-shadow transition-tilt card-tilt"
       >
         <div
-          className="cursor-hover relative w-full h-[230px] open-live-link"
+          className="cursor-pointer relative w-full h-[230px] open-live-link"
           onClick={(e) => openProjectLive(e, live_link)}
         >
           <img
             src={image}
             alt={name}
-            className="cursor-hover w-full h-full object-cover rounded-xl"
+            className="cursor-pointer w-full h-full object-cover rounded-xl"
           />
         </div>
 
@@ -67,12 +67,12 @@ const ProjectCard = ({
             {source_code_link && (
               <div
                 onClick={(e) => openProjectCode(e, source_code_link)}
-                className="cursor-hover bg-slate-900 rounded-full flex items-center justify-center w-10 h-10 scale-on-hover"
+                className="cursor-pointer bg-slate-900 rounded-full flex items-center justify-center w-10 h-10 scale-on-hover"
               >
                 <img
                   src={github}
                   alt="github"
-                  className="cursor-hover w-8 h-8 object-contain rounded-full neon-btn-shadow-only-hover"
+                  className="cursor-pointer w-8 h-8 object-contain rounded-full neon-btn-shadow-only-hover"
                 />
               </div>
             )}
