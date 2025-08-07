@@ -16,6 +16,7 @@ import {
   Hero,
   Navbar,
   ScreenLoader,
+  CustomCursor,
 } from "./components/components";
 
 const TRACKING_ID = "G-PSK51XTC26";
@@ -117,6 +118,8 @@ const App = () => {
         <Suspense fallback={null}>
           <StarsCanvas />
         </Suspense>
+
+        <CustomCursor />
       </div>
     </BrowserRouter>
   );
